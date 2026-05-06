@@ -1,0 +1,32 @@
+{
+  "index": 488,
+  "phase": 2,
+  "batch": 55,
+  "name": "sonar-gfx-font-scope",
+  "planned_name": "sonar-gfx-font-scope",
+  "language": "Dart",
+  "category": "Graphics",
+  "goal": "Design a Dart verification harness for font systems, covering stream reduction, windowed input fixtures, and failure-oriented tests.",
+  "repository_url": "https://github.com/ZachL111/sonar-gfx-font-scope",
+  "verification_command": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/verify.ps1",
+  "model": {
+    "inputs": [
+      "demand",
+      "capacity",
+      "latency",
+      "risk",
+      "weight"
+    ],
+    "threshold": 164,
+    "risk_penalty": 4,
+    "latency_penalty": 2,
+    "weight_bonus": 5,
+    "decision_rule": "accept when score is greater than or equal to threshold, otherwise review"
+  },
+  "quality_gates": [
+    "readme constraint scan",
+    "fixture presence check",
+    "metadata JSON parse",
+    "language verifier"
+  ]
+}
