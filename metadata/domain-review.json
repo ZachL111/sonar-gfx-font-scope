@@ -1,0 +1,73 @@
+{
+  "repo": "sonar-gfx-font-scope",
+  "language": "Dart",
+  "category": "Graphics",
+  "goal": "Design a Dart verification harness for font systems, covering stream reduction, windowed input fixtures, and failure-oriented tests.",
+  "review_model": {
+    "terms": [
+      "geometry span",
+      "atlas pressure",
+      "shader drift",
+      "render budget"
+    ],
+    "lanes": [
+      "ship",
+      "watch",
+      "hold"
+    ],
+    "score": "signal * 2 + slack + confidence - drag * 3",
+    "purpose": "surface the domain-specific cases that need the most careful review"
+  },
+  "cases": [
+    {
+      "name": "baseline",
+      "focus": "geometry span",
+      "signal": 47,
+      "slack": 51,
+      "drag": 30,
+      "confidence": 78,
+      "score": 133,
+      "lane": "watch"
+    },
+    {
+      "name": "stress",
+      "focus": "atlas pressure",
+      "signal": 59,
+      "slack": 21,
+      "drag": 25,
+      "confidence": 90,
+      "score": 154,
+      "lane": "ship"
+    },
+    {
+      "name": "edge",
+      "focus": "shader drift",
+      "signal": 78,
+      "slack": 33,
+      "drag": 19,
+      "confidence": 81,
+      "score": 213,
+      "lane": "ship"
+    },
+    {
+      "name": "recovery",
+      "focus": "render budget",
+      "signal": 88,
+      "slack": 47,
+      "drag": 20,
+      "confidence": 91,
+      "score": 254,
+      "lane": "ship"
+    },
+    {
+      "name": "stale",
+      "focus": "geometry span",
+      "signal": 77,
+      "slack": 45,
+      "drag": 20,
+      "confidence": 69,
+      "score": 208,
+      "lane": "ship"
+    }
+  ]
+}
