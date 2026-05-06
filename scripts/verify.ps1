@@ -63,3 +63,9 @@ dart tests/test_policy.dart
 powershell -NoProfile -ExecutionPolicy Bypass -File scripts/check-sonar-gfx-font-detail.ps1
 
 dart tests/test_domain_review.dart
+
+powershell -NoProfile -ExecutionPolicy Bypass -File scripts/check-sonar-gfx-font-properties.ps1
+if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+
+powershell -NoProfile -ExecutionPolicy Bypass -File scripts/check-sonar-gfx-font-golden.ps1
+if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
